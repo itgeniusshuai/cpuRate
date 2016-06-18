@@ -1,19 +1,23 @@
 package com.chart.model;
 
+import java.util.Date;
+import java.util.List;
+
 public class CpuRate {
-	private String times;
-	private String dates;
-	public String getTimes() {
+	private List<Date> times;
+	public List<Date> getTimes() {
 		return times;
 	}
-	public void setTimes(String times) {
+	public void setTimes(List<Date> times) {
 		this.times = times;
 	}
-	public String getDates() {
-		return dates;
+	public List<List<Double>> getDatas() {
+		return datas;
 	}
-	public void setDates(String dates) {
-		this.dates = dates;
+	public void setDatas(List<List<Double>> datas) {
+		this.datas = datas;
 	}
+	private List<List<Double>> datas;
+	
 	
 }
