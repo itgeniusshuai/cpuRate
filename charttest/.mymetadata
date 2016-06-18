@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-module
+  type="WEB"
+  name="charttest"
+  id="myeclipse.1466214544191"
+  context-root="/charttest"
+  j2ee-spec="6.0"
+  archive="charttest.war">
+  <attributes>
+    <attribute name="webrootdir" value="src/main/webapp" />
+  </attributes>
+</project-module>
+
