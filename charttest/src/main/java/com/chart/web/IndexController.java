@@ -10,4 +10,8 @@ public class IndexController {
 	public String toChart(){
 		return "showCpuRate";
 	}
+	@RequestMapping("/toServerList")
+	public String toServerList(){
+		return "redirect:";
+	}
 }

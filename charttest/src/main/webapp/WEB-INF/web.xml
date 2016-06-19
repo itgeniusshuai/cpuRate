@@ -5,7 +5,7 @@ xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns
 id="WebApp_ID" version="2.5">
 <display-name>chart-web</display-name>
 <welcome-file-list>
-<welcome-file>login.html</welcome-file>
+<welcome-file>index.jsp</welcome-file>
 </welcome-file-list>
 <!-- 加载spring容器 -->
 <context-param>
@@ -14,6 +14,9 @@ id="WebApp_ID" version="2.5">
 </context-param>
 <listener>
 <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+</listener>
+<listener>
+	<listener-class>com.chart.listener.ChartConnListener</listener-class>
 </listener>
  
 <!-- 解决post乱码 -->
@@ -50,4 +53,12 @@ id="WebApp_ID" version="2.5">
 <servlet-name>DispatcherServlet</servlet-name>
 <url-pattern>/</url-pattern>
 </servlet-mapping>
+
+<servlet>
+	<servlet-name>InitServlet</servlet-name>
+	<servlet-class>com.chart.web.InitServlet</servlet-class>
+	<load-on-startup>1</load-on-startup>
+</servlet>
+
+
 </web-app>
