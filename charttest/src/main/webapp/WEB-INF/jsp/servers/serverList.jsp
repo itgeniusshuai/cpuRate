@@ -18,7 +18,7 @@
 		</tr>
 		<c:forEach items="${serverInfos}" var="serverInfo" varStatus="ids">
 			<tr>
-				<td >${ids}</td>
+				<td >${ids.count}</td>
 				<td >${serverInfo.ip }</td>
 				<td >
 					<c:if test="${serverInfo.serverType==1 }">windows</c:if>

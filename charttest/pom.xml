@@ -137,13 +137,24 @@
         </resources>
          <finalName>ROOT</finalName>
         <plugins>
-            <plugin>
+            <!-- <plugin>
                 <groupId>org.codehaus.mojo</groupId>
-                <artifactId>tomcat-maven-plugin</artifactId>
+                <artifactId>tomcat7-maven-plugin</artifactId>
                 <configuration>
                     <url>http://baidu:8080/</url>
                     <server>admin</server>
                     <path>/chart</path>
+                </configuration>
+            </plugin> -->
+             <plugin>
+                <groupId>org.apache.tomcat.maven</groupId>
+                <artifactId>tomcat7-maven-plugin</artifactId>
+                <version>2.1</version>
+                <configuration>
+                    <port>9090</port>
+                    <path>/chart</path>
+                    <uriEncoding>UTF-8</uriEncoding>
+                    <server>tomcat7</server>
                 </configuration>
             </plugin>
         </plugins>
