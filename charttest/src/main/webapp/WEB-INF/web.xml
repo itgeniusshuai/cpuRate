@@ -15,9 +15,9 @@ id="WebApp_ID" version="2.5">
 <listener>
 <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
 </listener>
-<listener>
+<!-- <listener>
 	<listener-class>com.chart.listener.ChartConnListener</listener-class>
-</listener>
+</listener> -->
  
 <!-- 解决post乱码 -->
 <filter>

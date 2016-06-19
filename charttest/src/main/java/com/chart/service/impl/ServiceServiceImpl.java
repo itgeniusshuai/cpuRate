@@ -12,7 +12,6 @@ import com.chart.service.ServerService;
 public class ServiceServiceImpl implements ServerService{
 	@Autowired
 	private ServerDao serverDao;
-	@Override
 	public List<ServerInfo> queryAllServerInfos(ServerInfo serverInfo) {
 		List<ServerInfo> list=serverDao.queryServerInfos(null);
 		return list;
