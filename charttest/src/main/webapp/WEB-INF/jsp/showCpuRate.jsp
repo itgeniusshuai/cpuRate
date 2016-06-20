@@ -10,19 +10,22 @@
 </head>
 <body>
 	welect to chart;
+	<input type="hidden" id="ipHidden" value="${ip }">
 	<div id="cpuRate" style="weight:800;height:400;margin:20 auto;"></div>
 </body>
 <script type="text/javascript">
+var json = {};
 $(document).ready(function() {
+   var times;
+   var ip;
    var title = {
-      text: '城市平均气温'   
+      text: 'CpuUsedRate'   
    };
    var subtitle = {
       text: 'Source: runoob.com'
    };
    var xAxis = {
-      categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun',
-         'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
+      categories: times
    };
    var yAxis = {
       title: {
@@ -47,7 +50,7 @@ $(document).ready(function() {
    };
 
    var series =  [
-      {
+      /* {
          name: 'Tokyo',
          data: [7.0, 6.9, 9.5, 14.5, 18.2, 21.5, 25.2,
             26.5, 23.3, 18.3, 13.9, 9.6]
@@ -61,10 +64,10 @@ $(document).ready(function() {
          name: 'London',
          data: [3.9, 4.2, 5.7, 8.5, 11.9, 15.2, 17.0, 
             16.6, 14.2, 10.3, 6.6, 4.8]
-      }
+      } */
    ];
 
-   var json = {};
+   
 
    json.title = title;
    json.subtitle = subtitle;
@@ -76,6 +79,32 @@ $(document).ready(function() {
 
    $('#cpuRate').highcharts(json);
 });
+
+	$(function(){
+		flushData();
+	});
+	function flushData(){
+		setInterval(getData(),1000);
+	}
+	function getData(){
+		var ip=$("#ipHidden").val();
+		$.ajax({
+			type: "post",
+		      url: "${pageContext.request.contextPath}/server/queryRate",
+		      data:{"ip":ip},
+		      dataType: "json",
+		      success : function(data){
+		    	  alert(data.times);
+		     	var times=data.times;
+		     	var datas=data.datas;
+		     	json.xAxis = times;
+		     	json.yAxis = datas;
+		      }
+			
+		});
+		
+	}
+
 </script>
 
 </html>

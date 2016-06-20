@@ -25,7 +25,7 @@
 					<c:if test="${serverInfo.serverType==2 }">linux</c:if>
 					<c:if test="${serverInfo.serverType==3 }">mac</c:if>
 				</td>
-				<td ><a href="">查看</a></td>
+				<td ><a href="${pageContext.request.contextPath}/server/toCpuRate?ip=${serverInfo.ip  }">查看</a></td>
 			</tr>
 		
 		</c:forEach>

@@ -6,6 +6,6 @@
 <html>
 <head></head>
 	<body>
-		<a href="/chart/server/showall">diang</a>
+		<a href="${pageContext.request.contextPath}/server/showall">diang</a>
 	</body>
 </html>

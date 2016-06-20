@@ -1,14 +1,14 @@
 package com.chart.model;
 
 public class CpuRateData {
-	private Integer ip;
+	private String ip;
 	private long usedBytes;
 	private long totalBytes;
 	private long time;
-	public Integer getIp() {
+	public String getIp() {
 		return ip;
 	}
-	public void setIp(Integer ip) {
+	public void setIp(String ip) {
 		this.ip = ip;
 	}
 	public long getTime() {
@@ -28,5 +28,8 @@ public class CpuRateData {
 	}
 	public void setTotalBytes(long totalBytes) {
 		this.totalBytes = totalBytes;
+	}
+	public double getCpuRate(){
+		return ((double)this.usedBytes)/this.totalBytes;
 	}
 }

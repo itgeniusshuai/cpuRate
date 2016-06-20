@@ -15,9 +15,9 @@ id="WebApp_ID" version="2.5">
 <listener>
 <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
 </listener>
-<!-- <listener>
+ <listener>
 	<listener-class>com.chart.listener.ChartConnListener</listener-class>
-</listener> -->
+</listener> 
  
 <!-- 解决post乱码 -->
 <filter>
@@ -54,11 +54,6 @@ id="WebApp_ID" version="2.5">
 <url-pattern>/</url-pattern>
 </servlet-mapping>
 
-<servlet>
-	<servlet-name>InitServlet</servlet-name>
-	<servlet-class>com.chart.web.InitServlet</servlet-class>
-	<load-on-startup>1</load-on-startup>
-</servlet>
 
 
 </web-app>
